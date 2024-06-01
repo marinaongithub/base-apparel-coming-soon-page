@@ -42,7 +42,7 @@ main {
     grid-template-areas: "h1"
                         "p"
                         "form";
-    padding: 3.5rem 2.5rem 5.25rem;
+    padding: 3.5rem 2.5rem;
     gap: 1rem;
     font-family: "Josefin Sans", sans-serif;
     color: hsl(0, 36%, 70%);
