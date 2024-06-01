@@ -92,18 +92,40 @@ input[type="text"]::placeholder {
     color:hsla(0, 36%, 70%, 0.7);
 }
 
+img[id="errorIcon"] {
+    position: absolute;
+    right: 85px;
+    top: 12px;
+    visibility: hidden;
+}
 
 input[type="image"] {
     position: absolute;    
-    right: 0px;
+    right: -1px;
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border-radius: 25px;
-    border: none;
     width: 4rem;
     height: 3rem;
-    padding: 0.75rem 1.35rem 0.75rem 1.65rem;
+    padding: 1rem 1.35rem 1rem 1.65rem;
     box-shadow: 0px 10px 15px 5px hsl(357, 36%, 90%);
 }
+
+input[type="image"]:active {
+    background: linear-gradient(135deg, rgba(255, 229, 229, 1) 0%, rgba(237, 183, 183, 1) 100%);
+}
+
+p[id="invalidMsg"] {
+    color: hsl(0, 93%, 68%);
+    visibility: hidden;
+    padding-left: 2rem;
+    font-size: 13px;
+    text-align: left;
+}
+
+input[type="text"].invalid {
+    border: 1px solid hsl(0, 93%, 68%);
+}
+
 
 @media only screen and (min-width: 1024px) {
 
