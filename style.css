@@ -4,16 +4,15 @@
     padding: 0;
 }
 
-body {
-    height: 100dvh;
-    text-align: center; 
-}
-
 .grid-container {
+    height: 100dvh;
     display: grid;
     grid-template-areas: "header"
                     "picture"
                     "main";
+    grid-template-rows: repeat(4, auto auto auto);
+    text-align: center; 
+    place-content: center;
 }
 
 picture img {
@@ -45,7 +44,7 @@ main {
     grid-template-areas: "h1"
                         "p"
                         "form";
-    padding: 3.5rem 1rem 6rem;
+    padding: 3.75rem 2rem 5.5rem;
     gap: 1rem;
     font-family: "Josefin Sans", sans-serif;
     color: hsl(0, 36%, 70%);
@@ -68,7 +67,7 @@ h1 span {
 
 main p {
     grid-area: p;
-    font-size: 1rem;
+    font-size: 14px;
     line-height: 1.5rem;
 }
 
@@ -85,7 +84,7 @@ input[type="text"] {
     border: 1px solid hsla(0, 36%, 70%, 0.7);
     padding-left: 2rem;
     font: inherit;
-    background: linear-gradient(#fef8f8, #fef7f7);
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 
 input[type="text"]::placeholder {
@@ -104,4 +103,63 @@ input[type="image"] {
     height: 3rem;
     padding: 0.75rem 1.35rem 0.75rem 1.65rem;
     box-shadow: 0px 10px 15px 5px hsl(357, 36%, 90%);
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .grid-container {
+        grid-template-areas: "header picture"
+                            "main picture";
+        grid-template-columns: repeat(2, auto);
+        text-align: left;
+        place-content: center;
+    }
+
+    .grid-container:nth-child(odd) {
+        background-image: url("images/bg-pattern-desktop.svg");
+        background-repeat: no-repeat;
+    }
+
+    header {
+        padding: 4rem 0 0 12rem;
+    }
+
+    .logo {
+        width: 155px;
+    }
+
+    h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+
+    main {
+        padding: 0 12rem 10rem;
+        gap: 0;
+        background: none;
+    }
+
+    picture img {
+        height: min(800px, 100vh);
+        width: auto;
+    }
+
+    main p {
+        font-size: 16px;
+    }
+
+    input[type="text"] {
+        background: transparent;
+    }
+
+    input[type="image"] {
+        width: 5rem;
+        padding: 0.75rem 2rem 1rem 2.25rem;
+    }
+
+    @media only screen and (min-width: 1441px) {
+        .grid-container:nth-child(odd) {
+            background-size: cover;
+        }
+    }
 }
